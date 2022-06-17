@@ -1,0 +1,73 @@
+[
+  {
+    "name": name.group(1),
+    "state": {"admin": state.group(1), "link": linkup.group(1)},
+    "desr": des,
+    "linkLevelType": linklevel,
+    "mtu": mtu,
+    "speed": sp,
+    "duplex": du,
+    "mac": '5000.0026.0000',
+    "clearing": clear,
+    "statslists": [
+      {
+        "type": 'traffic',
+        "counters": {
+          "inBytes": inbytes[0],
+          "outBytes": outbytes[0],
+          "inPackets": inputpackets[0],
+          "outPacktes": outputpackets[0],
+        },
+        "load": {"inBytes": 31, "outBytes": 165, "inPkts": 0, "outPkts": 0},
+      },
+      {"type": 'inErrors', "counters": {"inErr": 0, "inDrops": 0}},
+      {"type": 'outErrors', "counters": {"outErr": 0, "outDrops": 0}}
+
+    ],
+    "logIntList": [
+      {
+        "name": name.group(1),
+        "protocolList": [
+          {
+            "protocolList": protocol[0],
+            "value": {
+              "value": [
+                {
+                  "ip": ip.group(1),
+                  "mask": mask.group(1),
+                  "net": net.group(1),
+                  "netLong": 183586816,
+                  "broadLong": 183586817,
+                  "flagList": [flag.group(1), flag.group(2)],
+                },
+              ],
+            },
+          },
+          {"type": protocol[1]},
+          {"type": protocol[2]},
+        ],
+        "statsList": [
+          {
+            "type": 'traffic',
+            "counters": {
+              "inBytes": inbytes[2],
+              "outBytes": outbytes[2],
+              "inPkts": inputpackets[2],
+              "outPkts": outputpackets[2],
+            },
+          },
+          {
+            "type": 'local',
+            "counters": {
+              "inBytes": inbytes[3],
+              "outBytes": outbytes[2],
+              "inPkts": inputpackets[2],
+              "outPkts": outputpackets[2],
+            },
+          },
+        ],
+        "mtu": mtu,
+      },
+    ],
+  },
+]
